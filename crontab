@@ -1,0 +1,4 @@
+
+*/10 * * * * /usr/local/bin/aws --profile imaging s3 sync /home/pi/Pictures s3://braingeneers-imaging/
+
+0 4 * * 1  /usr/bin/find /home/pi/Pictures/*/ -type f -name '*.jpg' -mtime +10 -exec rm {} \;
