@@ -1,2 +1,0 @@
-ssh pi@$1.local -t 'sudo sed -i "\$a\    'StrictHostKeyChecking no' \n   ' UserKnownHostsFile=/dev/null'" /etc/ssh/ssh_config'
-
