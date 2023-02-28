@@ -1,14 +1,14 @@
 # RPi-Change-Hostname
 Simple script to change hostname of raspberry pi
 
+change-hostname-from-boot.sh must be launched at startup. crontab file provided shows the cron way of doing it.
+
+This script reads the file /boot/hostname.txt which is accessible on the bootable raspbian media 
+
 Example use:
+Once the boot script is set up, hostname can also be changed by remotely running the change_hostname script which edits the /boot/hostname.txt file
+```
 sh change_hostname.sh [newhostname]
+```
+run remotely with `ssh user@host 'bash -s [newhostname]' < ./change_hostname.sh`
 
-run remotely with ssh user@host 'bash -s [newhostname]' < ./change_hostname.sh
-
-# update ssh-config
-Needs to be run to handle making another "microscopehub" pi without causing conflicts
-
-#todo
-make script to change ~/scripts/copySend.sh to
-scp $1 pi@microscopehub.local:~/Pictures/$2/
